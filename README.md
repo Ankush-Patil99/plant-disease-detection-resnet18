@@ -52,11 +52,11 @@ Note: Each file includes a **Click Here** placeholder where users can manually i
 | File Name | Open |
 |----------|------|
 | plant_disease_checkpoint.pth | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/models/plant_disease_checkpoint.pth) |
-| plant_disease_model_full_cpu.pt | [Click Here]() |
-| plant_disease_model_onecycle.pth | [Click Here]() |
-| plant_disease_model_torchscript.pt | [Click Here]() |
-| plant_disease_resnet18.pth | [Click Here]() |
-| plant_disease_resnet18_full.pt | [Click Here]() |
+| plant_disease_model_full_cpu.pt | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/models/plant_disease_model_full_cpu.pt) |
+| plant_disease_model_onecycle.pth | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/models/plant_disease_model_onecycle.pth) |
+| plant_disease_model_torchscript.pt | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/models/plant_disease_model_torchscript.pt) |
+| plant_disease_resnet18.pth | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/models/plant_disease_resnet18.pth) |
+| plant_disease_resnet18_full.pt | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/models/plant_disease_resnet18_full.pt) |
 
 </details>
 
@@ -65,16 +65,15 @@ Note: Each file includes a **Click Here** placeholder where users can manually i
 
 | File Name | Open |
 |----------|------|
-| classification_report.json | [Click Here]() |
-| final_test_accuracy.txt | [Click Here]() |
-| gradcam_5.png | [Click Here]() |
-| gradcam_sample.png | [Click Here]() |
-| model_predictions.csv | [Click Here]() |
-| normalized_confusion_matrix.png | [Click Here]() |
-| per_class_accuracies.png | [Click Here]() |
-| per_class_accuracy.csv | [Click Here]() |
-| training_curve_clean.png | [Click Here]() |
-| training_validation_curve_fixed.png | [Click Here]() |
+| classification_report.json | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/results/classification_report.json) |
+| final_test_accuracy.txt | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/results/final_test_accuracy.txt) |
+| gradcam_5.png | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/results/gradcam_5.png) |
+| model_predictions.csv | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/results/model_predictions.csv) |
+| normalized_confusion_matrix.png | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/results/normalized_confusion_matrix.png) |
+| per_class_accuracies.png | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/results/per_class_accuracies.png) |
+| per_class_accuracy.csv | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/results/per_class_accuracy.csv) |
+| training_curve_clean.png | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/results/training_curve_clean.png) |
+| training_validation_curve_fixed.png | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/results/training_validation_curve_fixed.png) |
 
 </details>
 
@@ -83,13 +82,13 @@ Note: Each file includes a **Click Here** placeholder where users can manually i
 
 | File Name | Open |
 |----------|------|
-| augmentation_config.txt | [Click Here]() |
-| class_labels.json | [Click Here]() |
-| class_names.json | [Click Here]() |
-| confusion_matrix.npy | [Click Here]() |
-| gradcam_info.txt | [Click Here]() |
-| onecycle_log.txt | [Click Here]() |
-| training_history.csv | [Click Here]() |
+| augmentation_config.txt | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/metadata/augmentation_config.txt) |
+| class_labels.json | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/metadata/class_labels.json) |
+| class_names.json | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/metadata/class_names.json) |
+| confusion_matrix.npy | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/metadata/confusion_matrix.npy) |
+| gradcam_info.txt | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/metadata/gradcam_info.txt) |
+| onecycle_log.txt | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/metadata/onecycle_log.txt) |
+| training_history.csv | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/metadata/training_history.csv) |
 
 </details>
 
@@ -98,8 +97,8 @@ Note: Each file includes a **Click Here** placeholder where users can manually i
 
 | File Name | Open |
 |----------|------|
-| random_sample_prediction.txt | [Click Here]() |
-| top3_prediction.txt | [Click Here]() |
+| random_sample_prediction.txt | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/inference_samples/random_sample_prediction.txt) |
+| top3_prediction.txt | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/inference_samples/top3_prediction.txt) |
 
 </details>
 
@@ -108,14 +107,14 @@ Note: Each file includes a **Click Here** placeholder where users can manually i
 
 | File Name | Open |
 |----------|------|
-| config.py | [Click Here]() |
-| dataset.py | [Click Here]() |
-| eval.py | [Click Here]() |
-| gradcam.py | [Click Here]() |
-| inference.py | [Click Here]() |
-| model.py | [Click Here]() |
-| train.py | [Click Here]() |
-| transforms.py | [Click Here]() |
+| config.py | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/inference_samples/top3_prediction.txt) |
+| dataset.py | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/src/dataset.py) |
+| eval.py | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/src/eval.py) |
+| gradcam.py | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/src/gradcam.py) |
+| inference.py | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/src/inference.py) |
+| model.py | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/src/model.py) |
+| train.py | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/src/train.py) |
+| transforms.py | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/src/transforms.py) |
 
 </details>
 
@@ -124,7 +123,7 @@ Note: Each file includes a **Click Here** placeholder where users can manually i
 
 | File Name | Open |
 |----------|------|
-| plant-diseases-detection.ipynb | [Click Here]() |
+| plant-diseases-detection.ipynb | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/notebook/plant-diseases-detection.ipynb) |
 
 </details>
 
