@@ -13,6 +13,7 @@ This project is an end-to-end deep learning pipeline for detecting plant disease
 ### Dataset Source
 Kaggle Dataset: **New Plant Diseases Dataset**  
 Contains 38 classes of healthy and diseased plant leaves.
+
 train/ → 54303 images  
 valid/ → 6977 images  
 test/ → 3498 images  
