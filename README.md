@@ -5,9 +5,14 @@
 This project is an end-to-end deep learning pipeline for detecting plant diseases using **ResNet18**, transfer learning, fine-tuning, Grad‑CAM explainability, and full evaluation. It demonstrates a production‑quality structure suitable for real-world ML applications and GitHub portfolios.
 
 ## 📂 Dataset
+
 ### Dataset Source
 Kaggle Dataset: **New Plant Diseases Dataset**  
 Contains 38 classes of healthy and diseased plant leaves.
+
+🔗 **Dataset Link:**  
+https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset
+
 
 ### Dataset Structure
 ```
@@ -37,17 +42,92 @@ data/
 ```
 pip install torch torchvision matplotlib scikit-learn
 ```
+## 📁 Project Structure (Collapsible Table)
 
-## 📁 Project Structure
-```
-plant-disease-detection/
- ├── models/
- ├── results/
- ├── metadata/
- ├── inference_samples/
- ├── src/
- └── notebook/
-```
+<details>
+<summary><b>models/</b></summary>
+
+| File Name |
+|----------|
+| plant_disease_checkpoint.pth |
+| plant_disease_model_full_cpu.pt |
+| plant_disease_model_onecycle.pth |
+| plant_disease_model_torchscript.pt |
+| plant_disease_resnet18.pth |
+| plant_disease_resnet18_full.pt |
+
+</details>
+
+<details>
+<summary><b>results/</b></summary>
+
+| File Name |
+|----------|
+| classification_report.json |
+| final_test_accuracy.txt |
+| gradcam_5.png |
+| gradcam_sample.png |
+| model_predictions.csv |
+| normalized_confusion_matrix.png |
+| per_class_accuracies.png |
+| per_class_accuracy.csv |
+| training_curve_clean.png |
+| training_validation_curve_fixed.png |
+
+</details>
+
+<details>
+<summary><b>metadata/</b></summary>
+
+| File Name |
+|----------|
+| augmentation_config.txt |
+| class_labels.json |
+| class_names.json |
+| confusion_matrix.npy |
+| gradcam_info.txt |
+| onecycle_log.txt |
+| training_history.csv |
+
+</details>
+
+<details>
+<summary><b>inference_samples/</b></summary>
+
+| File Name |
+|----------|
+| random_sample_prediction.txt |
+| top3_prediction.txt |
+
+</details>
+
+<details>
+<summary><b>src/</b></summary>
+
+| File Name |
+|----------|
+| config.py |
+| dataset.py |
+| eval.py |
+| gradcam.py |
+| inference.py |
+| model.py |
+| train.py |
+| transforms.py |
+
+</details>
+
+<details>
+<summary><b>notebook/</b></summary>
+
+| File Name |
+|----------|
+| plant-diseases-detection.ipynb |
+
+</details>
+
+
+---
 
 ## 🔧 Training Pipeline
 ### Base Training (Frozen Layers)
