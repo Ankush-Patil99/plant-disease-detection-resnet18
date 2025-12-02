@@ -145,9 +145,7 @@ Note: Each file includes a **Click Here** placeholder where users can manually i
 
 ## 📊 Training Results
 ### Training & Validation Curves
-Located in:  
-`results/training_curve_clean.png`  
-`results/training_validation_curve_fixed.png`
+Located in: https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/tree/main/plant-disease-detection/results
 
 ### Accuracy Scores
 - Final Validation Accuracy: Logged in `training_history.csv`  
