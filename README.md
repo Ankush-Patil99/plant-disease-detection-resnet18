@@ -1,3 +1,7 @@
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-ResNet18-red)
+![HuggingFace](https://img.shields.io/badge/Model%20Hosted%20On-HuggingFace-yellow)
+![Kaggle](https://img.shields.io/badge/Run%20On-Kaggle-blue)
 
 # 🌿 Plant Disease Detection using ResNet18 (PyTorch)
 
@@ -9,6 +13,10 @@ This project is an end-to-end deep learning pipeline for detecting plant disease
 ### Dataset Source
 Kaggle Dataset: **New Plant Diseases Dataset**  
 Contains 38 classes of healthy and diseased plant leaves.
+train/ → 54303 images  
+valid/ → 6977 images  
+test/ → 3498 images  
+
 
 🔗 **Dataset Link:**  
 https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset
@@ -107,7 +115,7 @@ Note: Each file includes a **Click Here** placeholder where users can manually i
 
 | File Name | Open |
 |----------|------|
-| config.py | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/inference_samples/top3_prediction.txt) |
+| config.py | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/src/config.py) |
 | dataset.py | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/src/dataset.py) |
 | eval.py | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/src/eval.py) |
 | gradcam.py | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/src/gradcam.py) |
@@ -131,94 +139,195 @@ Note: Each file includes a **Click Here** placeholder where users can manually i
 ---
 
 ## 🔧 Training Pipeline
-### Base Training (Frozen Layers)
-- Train classifier head for 5 epochs  
-- Save base model + training logs  
 
-### Fine-Tuning (Unfreezing Layer4)
-- Allow deeper layers to update  
-- Higher accuracy and robustness  
+### **Base Training (Frozen Layers)**
+- Trained only the classifier head for **5 epochs**
+- Backbone layers kept frozen for stable initial learning
+- Saved:
+  - `plant_disease_resnet18.pth`
+  - `training_history.csv`
 
-### OneCycleLR Training
-- Fast, stable convergence  
-- Produces the best performing model  
+### **Fine-Tuning (Unfreezing Layer4)**
+- Unfroze **layer4** of ResNet18 for deeper feature extraction  
+- Improved model generalization and robustness  
+- Saved fine-tuned weights:
+  - `plant_disease_model_finetuned.pth`
+
+### **OneCycleLR Training**
+- Applied **OneCycleLR** scheduling for faster, smoother convergence  
+- Achieved the *best* validation accuracy among all training stages  
+- Saved:
+  - `plant_disease_model_onecycle.pth`
+  - `onecycle_log.txt`
+
+---
 
 ## 📊 Training Results
-### Training & Validation Curves
-Located in: https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/tree/main/plant-disease-detection/results
 
-### Accuracy Scores
-- Final Validation Accuracy: Logged in `training_history.csv`  
+### **Training & Validation Curves**
+All learning curves (training, validation, combined) are available in the **results folder**:
+
+🔗 **Training Curves & Metrics:**  
+https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/tree/main/plant-disease-detection/results
+
+Files include:
+- `training_curve_clean.png`
+- `training_validation_curve_fixed.png`
+
+### **Accuracy Scores**
+- Final validation accuracy recorded in:  
+  **`training_history.csv`**  
+  (Located inside `metadata/` folder)
+
+🔗 Metadata Folder:  
+https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/tree/main/plant-disease-detection/metadata
+
 
 ## 🧪 Evaluation
-### Classification Report
-Saved at:  
-`results/classification_report.json`
 
-### Confusion Matrix
-`results/confusion_matrix.png`
+### **Classification Report**
+Stored at: **[Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/results/classification_report.json)**  
+File: `results/classification_report.json`
 
-### Normalized Confusion Matrix
-`results/normalized_confusion_matrix.png`
+### **Confusion Matrix**
+Stored at: **[Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/metadata/confusion_matrix.npy)**  
+File: `results/confusion_matrix.png`
 
-### Per-Class Accuracy
-`results/per_class_accuracies.png`  
-`results/per_class_accuracy.csv`
+
+### **Per-Class Accuracy**
+Stored at: **[Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/tree/main/plant-disease-detection/results)**  
+Files:
+- `results/per_class_accuracies.png`
+- `results/per_class_accuracy.csv`
+
+
+---
 
 ## 🔍 Explainability (Grad-CAM)
-### Single Image Grad-CAM
-`results/gradcam_sample.png`
 
-### Batch Grad-CAM
-`results/gradcam_5.png`
+### **Batch Grad-CAM (5 Samples)**
+Stored at: **[Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/results/gradcam_5.png)**  
+File: `results/gradcam_5.png`
 
-### Interpretation
-Grad‑CAM highlights important leaf regions contributing to predictions, improving transparency and trust.
+### **Interpretation**
+Grad-CAM highlights the critical image regions influencing the model’s decision, helping validate that the network focuses on the diseased portions of leaves and improving overall model transparency and trust.
 
 ## 🧾 Inference
+
 ### Single Image Prediction
-```
+```bash
 python inference.py --image sample.jpg
 ```
 
-### Top-3 Predictions
-Stored in:  
-`inference_samples/top3_prediction.txt`
+### Top-3 Predictions  
+<details>
+<summary>Stored at (Click to expand)</summary>
 
-### Batch Predictions
-`inference_samples/batch_predictions.json`
+- **top3_prediction.txt**  
+  👉 [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/inference_samples/top3_prediction.txt)
 
-### Random Sample Prediction
-`inference_samples/random_sample_prediction.txt`
+</details>
+
+### Batch Predictions  
+<details>
+<summary>Stored at (Click to expand)</summary>
+
+- **batch_predictions.json**  
+  👉 *(Not uploaded — add if needed)*
+
+</details>
+
+### Random Sample Prediction  
+<details>
+<summary>Stored at (Click to expand)</summary>
+
+- **random_sample_prediction.txt**  
+  👉 [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/inference_samples/random_sample_prediction.txt)
+
+</details>
+
 
 ## 💾 Saved Models & Artifacts
-### Model Formats
-- `.pth` → PyTorch model weights  
-- `.pt` → Full model (CPU)  
-- TorchScript model → deployable version  
+### Model Formats  
+<details>
+<summary>Click to expand</summary>
 
-### Metadata Files
-- `class_labels.json`  
-- `class_names.json`  
-- `augmentation_config.txt`  
+- **plant_disease_checkpoint.pth**  
+  👉 [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/models/plant_disease_checkpoint.pth)
 
-### Logs & Reports
-- `training_history.csv`  
-- `onecycle_log.txt`  
+- **plant_disease_model_full_cpu.pt**  
+  👉 [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/models/plant_disease_model_full_cpu.pt)
 
-## 🚀 How to Run the Project
-### Run on Kaggle Notebook
-1. Upload repository  
-2. Enable GPU (T4)  
-3. Run notebook:  
-   `notebook/plant-diseases-detection.ipynb`
+- **plant_disease_model_onecycle.pth**  
+  👉 [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/models/plant_disease_model_onecycle.pth)
 
-### Run Locally (Optional)
+- **plant_disease_model_torchscript.pt**  
+  👉 [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/models/plant_disease_model_torchscript.pt)
+
+- **plant_disease_resnet18.pth**  
+  👉 [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/models/plant_disease_resnet18.pth)
+
+- **plant_disease_resnet18_full.pt**  
+  👉 [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/models/plant_disease_resnet18_full.pt)
+
+</details>
+
+### Metadata Files  
+<details>
+<summary>Click to expand</summary>
+
+- **class_labels.json**  
+  👉 [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/metadata/class_labels.json)
+
+- **class_names.json**  
+  👉 [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/metadata/class_names.json)
+
+- **augmentation_config.txt**  
+  👉 [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/metadata/augmentation_config.txt)
+
+</details>
+
+### Logs & Reports  
+<details>
+<summary>Click to expand</summary>
+
+- **training_history.csv**  
+  👉 [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/metadata/training_history.csv)
+
+- **onecycle_log.txt**  
+  👉 [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/metadata/onecycle_log.txt)
+
+</details>
+
+---
+## 🚀 How to Run the Project (Kaggle Recommended)
+
+### ✅ 1 — Open Kaggle Notebook
+- Create a new Kaggle Notebook  
+- Set Accelerator to **GPU (T4)**  
+
+### ✅ 2 — Clone Your GitHub Repository
 ```
-python src/train.py
-python src/eval.py
-python src/inference.py
+!git clone https://github.com/<your-username>/plant-disease-detection
 ```
+
+### ✅ 3 — Install Dependencies
+```
+!pip install torch torchvision huggingface_hub pillow scikit-learn matplotlib
+```
+
+### ✅ 4 — Open and Run the Notebook
+```
+notebook/plant-diseases-detection.ipynb
+```
+
+➡ Running all cells will automatically:
+- Fetch trained models from Hugging Face  
+- Load dataset  
+- Train / evaluate / run inference  
+- Save outputs into results/ and inference_samples/  
+
+---
 
 ## 🔮 Future Improvements
 - Add EfficientNet / ConvNeXt models  
@@ -231,4 +340,8 @@ MIT License
 
 ## 👤 Author
 **Ankush Patil**  
-Machine Learning & Deep Learning Engineer
+Machine Learning & NLP Engineer  
+📧 **Email**: ankpatil1203@gmail.com  
+💼 **LinkedIn**: www.linkedin.com/in/ankush-patil-48989739a  
+🌐 **GitHub**: https://github.com/Ankush-Patil99  
+
