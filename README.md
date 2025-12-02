@@ -42,87 +42,89 @@ data/
 ```
 pip install torch torchvision matplotlib scikit-learn
 ```
-## 📁 Project Structure (Collapsible Table)
+## 📁 Project Structure
+
+Note: Each file includes a **Click Here** placeholder where users can manually insert Hugging Face links.
 
 <details>
 <summary><b>models/</b></summary>
 
-| File Name |
-|----------|
-| plant_disease_checkpoint.pth |
-| plant_disease_model_full_cpu.pt |
-| plant_disease_model_onecycle.pth |
-| plant_disease_model_torchscript.pt |
-| plant_disease_resnet18.pth |
-| plant_disease_resnet18_full.pt |
+| File Name | Open |
+|----------|------|
+| plant_disease_checkpoint.pth | [Click Here](https://huggingface.co/ankpatil1203/plant-disease-detection-resnet18/blob/main/plant-disease-detection/models/plant_disease_checkpoint.pth) |
+| plant_disease_model_full_cpu.pt | [Click Here]() |
+| plant_disease_model_onecycle.pth | [Click Here]() |
+| plant_disease_model_torchscript.pt | [Click Here]() |
+| plant_disease_resnet18.pth | [Click Here]() |
+| plant_disease_resnet18_full.pt | [Click Here]() |
 
 </details>
 
 <details>
 <summary><b>results/</b></summary>
 
-| File Name |
-|----------|
-| classification_report.json |
-| final_test_accuracy.txt |
-| gradcam_5.png |
-| gradcam_sample.png |
-| model_predictions.csv |
-| normalized_confusion_matrix.png |
-| per_class_accuracies.png |
-| per_class_accuracy.csv |
-| training_curve_clean.png |
-| training_validation_curve_fixed.png |
+| File Name | Open |
+|----------|------|
+| classification_report.json | [Click Here]() |
+| final_test_accuracy.txt | [Click Here]() |
+| gradcam_5.png | [Click Here]() |
+| gradcam_sample.png | [Click Here]() |
+| model_predictions.csv | [Click Here]() |
+| normalized_confusion_matrix.png | [Click Here]() |
+| per_class_accuracies.png | [Click Here]() |
+| per_class_accuracy.csv | [Click Here]() |
+| training_curve_clean.png | [Click Here]() |
+| training_validation_curve_fixed.png | [Click Here]() |
 
 </details>
 
 <details>
 <summary><b>metadata/</b></summary>
 
-| File Name |
-|----------|
-| augmentation_config.txt |
-| class_labels.json |
-| class_names.json |
-| confusion_matrix.npy |
-| gradcam_info.txt |
-| onecycle_log.txt |
-| training_history.csv |
+| File Name | Open |
+|----------|------|
+| augmentation_config.txt | [Click Here]() |
+| class_labels.json | [Click Here]() |
+| class_names.json | [Click Here]() |
+| confusion_matrix.npy | [Click Here]() |
+| gradcam_info.txt | [Click Here]() |
+| onecycle_log.txt | [Click Here]() |
+| training_history.csv | [Click Here]() |
 
 </details>
 
 <details>
 <summary><b>inference_samples/</b></summary>
 
-| File Name |
-|----------|
-| random_sample_prediction.txt |
-| top3_prediction.txt |
+| File Name | Open |
+|----------|------|
+| random_sample_prediction.txt | [Click Here]() |
+| top3_prediction.txt | [Click Here]() |
 
 </details>
 
 <details>
 <summary><b>src/</b></summary>
 
-| File Name |
-|----------|
-| config.py |
-| dataset.py |
-| eval.py |
-| gradcam.py |
-| inference.py |
-| model.py |
-| train.py |
-| transforms.py |
+| File Name | Open |
+|----------|------|
+| config.py | [Click Here]() |
+| dataset.py | [Click Here]() |
+| eval.py | [Click Here]() |
+| gradcam.py | [Click Here]() |
+| inference.py | [Click Here]() |
+| model.py | [Click Here]() |
+| train.py | [Click Here]() |
+| transforms.py | [Click Here]() |
 
 </details>
 
 <details>
 <summary><b>notebook/</b></summary>
 
-| File Name |
-|----------|
-| plant-diseases-detection.ipynb |
+| File Name | Open |
+|----------|------|
+| plant-diseases-detection.ipynb | [Click Here]() |
 
 </details>
 
